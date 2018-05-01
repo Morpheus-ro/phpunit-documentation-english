@@ -2,13 +2,13 @@
 PHPUnit Manual
 ==============
 
-Edition for PHPUnit |version|. Updated on |today|.
+PHPUnit versiunea |version|. Actualizat pe |today|.
 
 Sebastian Bergmann
 
 This work is licensed under the Creative Commons Attribution 3.0 Unported License.
 
-Contents:
+Continut:
 
 .. toctree::
    :maxdepth: 3

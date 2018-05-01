@@ -3,56 +3,52 @@
 .. _installation:
 
 ==================
-Installing PHPUnit
+Instalare PHPUnit
 ==================
 
 .. _installation.requirements:
 
-Requirements
+Cerinte
 ############
 
-PHPUnit 7.0 requires PHP 7.1; using the latest version of PHP is highly
-recommended.
+PHPUnit 7.0 necesita PHP 7.1; utilizarea ultimei versiuni de PHP este recomandata.
 
-PHPUnit requires the `dom <http://php.net/manual/en/dom.setup.php>`_ and `json <http://php.net/manual/en/json.installation.php>`_
-extensions, which are normally enabled by default.
 
-PHPUnit also requires the
+PHPUnit necesita extensiile `dom <http://php.net/manual/en/dom.setup.php>`_ si `json <http://php.net/manual/en/json.installation.php>`_
+, care sunt activat implicit.
+
+PHPUnit de asemenea, necesită extentiile
 `pcre <http://php.net/manual/en/pcre.installation.php>`_,
 `reflection <http://php.net/manual/en/reflection.installation.php>`_,
-and `spl <http://php.net/manual/en/spl.installation.php>`_
-extensions. These standard extensions are enabled by default and cannot be
-disabled without patching PHP's build system and/or C sources.
+si `spl <http://php.net/manual/en/spl.installation.php>`_
+. Aceste extensii standard sunt activate implicit si nu pot fi dezactivate fara modifica sursele PHP si/sau surselor C.
 
-The code coverage report feature requires the
-`Xdebug <http://xdebug.org/>`_ (2.5.0 or later) and
-`tokenizer <http://php.net/manual/en/tokenizer.installation.php>`_
-extensions.
-Generating XML reports requires the
-`xmlwriter <http://php.net/manual/en/xmlwriter.installation.php>`_
-extension.
+
+Raportul de acoperire cod necesita extensiile
+`Xdebug <http://xdebug.org/>`_ (2.5.0 sau mai mare) si
+`tokenizer <http://php.net/manual/en/tokenizer.installation.php>`_.
+Generarea de rapoarte XML necesita extensia
+`xmlwriter <http://php.net/manual/en/xmlwriter.installation.php>`_.
 
 .. _installation.phar:
 
-PHP Archive (PHAR)
+Arhiva PHP (PHAR)
 ##################
 
-The easiest way to obtain PHPUnit is to download a `PHP Archive (PHAR) <http://php.net/phar>`_ that has all required
-(as well as some optional) dependencies of PHPUnit bundled in a single
-file.
+Cel mai usor mod de a obtine PHPUnit este de a descarca `PHP Archive (PHAR) <http://php.net/phar>`_ care are toate dependintele
+(si cateva optionale) necesare intr-un singur fisier.
 
-The `phar <http://php.net/manual/en/phar.installation.php>`_
-extension is required for using PHP Archives (PHAR).
+Extensia `phar <http://php.net/manual/en/phar.installation.php>`_
+este necesara pentru a folosii arhive PHP (PHAR).
 
-If the `Suhosin <http://suhosin.org/>`_ extension is
-enabled, you need to allow execution of PHARs in your
+Daca extensia `Suhosin <http://suhosin.org/>`_ este activata trebuie sa persimeti executia fisierelor PHAR in fisierul
 ``php.ini``:
 
 .. code-block:: bash
 
     suhosin.executor.include.whitelist = phar
 
-To globally install the PHAR:
+Pentru a instala global PHAR:
 
 .. code-block:: bash
 
@@ -62,7 +58,7 @@ To globally install the PHAR:
     $  phpunit --version
     PHPUnit x.y.z by Sebastian Bergmann and contributors.
 
-You may also use the downloaded PHAR file directly:
+Puteti descarca fisierul PHAR direct:
 
 .. code-block:: bash
 
@@ -75,34 +71,34 @@ You may also use the downloaded PHAR file directly:
 Windows
 =======
 
-Globally installing the PHAR involves the same procedure as manually
+Instalarea globala a PHAR implica aceasi pasi ca procedura manuala
 `installing Composer on Windows <https://getcomposer.org/doc/00-intro.md#installation-windows>`_:
 
 #.
 
-   Create a directory for PHP binaries; e.g., :file:`C:\\bin`
+   Creati un director pentru fisierele PHP; e.x. :file:`C:\\bin`
 
 #.
 
-   Append ;C:\bin to your ``PATH``
-   environment variable
-   (`related help <http://stackoverflow.com/questions/6318156/adding-python-path-on-windows-7>`_)
+   Adaugati C:\bin la calea ``PATH``
+   din mediul de lucru
+   (`sfaturi suplimentare <http://stackoverflow.com/questions/6318156/adding-python-path-on-windows-7>`_)
 
 #.
 
-   Download `<https://phar.phpunit.de/phpunit-7.0.phar>`_ and
-   save the file as :file:`C:\\bin\\phpunit.phar`
+   Descarcati `<https://phar.phpunit.de/phpunit-7.0.phar>`_ si
+   salvati fisirul ca :file:`C:\\bin\\phpunit.phar`
 
 #.
 
-   Open a command line (e.g.,
-   press :kbd:`Windows`:kbd:`R`
-   » type cmd
+   Deschideti o linie de comanda (e.x.
+   apasati :kbd:`Windows`:kbd:`R`
+   » tastati cmd
    » :kbd:`ENTER`)
 
 #.
 
-   Create a wrapping batch script (results in
+   Creati un script batch (rezulta in
    :file:`C:\\bin\\phpunit.cmd`):
 
    .. code-block:: bash
@@ -113,40 +109,40 @@ Globally installing the PHAR involves the same procedure as manually
 
 #.
 
-   Open a new command line and confirm that you can execute PHPUnit
-   from any path:
+   Deschideti o linie de comanda noua si confirmati executia PHPUnit
+   din orice cale:
 
    .. code-block:: bash
 
        C:\Users\username>  phpunit --version
        PHPUnit x.y.z by Sebastian Bergmann and contributors.
 
-For Cygwin and/or MingW32 (e.g., TortoiseGit) shell environments, you
-may skip step 5. above, simply save the file as
-:file:`phpunit` (without :file:`.phar`
-extension), and make it executable via
+Pentru interpretoarele de comanda Cygwin si/sau MingW32 (e.x. TortoiseGit),
+ puteti trece peste pasul 5 de deasupra salvand fisierul ca
+:file:`phpunit` (fara extensia :file:`.phar`)
+si faceti-l executabil via
 chmod 775 phpunit.
 
 .. _installation.phar.verification:
 
-Verifying PHPUnit PHAR Releases
+Verificarea lansarilor PHPUnit PHAR
 ===============================
 
-All official releases of code distributed by the PHPUnit Project are
-signed by the release manager for the release. PGP signatures and SHA1
-hashes are available for verification on `phar.phpunit.de <https://phar.phpunit.de/>`_.
+Toate lansarile de cod oficiale distribuite de Proiectul PHPUnit sunt
+ semnate de release manager in parte. Semnaturile PGP si codurile
+ hash SHA1 sunt disponibile pentru verificare la `phar.phpunit.de <https://phar.phpunit.de/>`_.
 
-The following example details how release verification works. We start
-by downloading :file:`phpunit.phar` as well as its
-detached PGP signature :file:`phpunit.phar.asc`:
+Urmatorul exemplu detaliaza cum functioneaza verificarea. Incepem prin
+descarcarea :file:`phpunit.phar` precum si a
+semnaturii PGP separat :file:`phpunit.phar.asc`:
 
 .. code-block:: bash
 
     wget https://phar.phpunit.de/phpunit.phar
     wget https://phar.phpunit.de/phpunit.phar.asc
 
-We want to verify PHPUnit's PHP Archive (:file:`phpunit.phar`)
-against its detached signature (:file:`phpunit.phar.asc`):
+Vrem sa verificam arhiva PHP PHPUnit (:file:`phpunit.phar`)
+impotriva semnaturii separate (:file:`phpunit.phar.asc`):
 
 .. code-block:: bash
 
@@ -154,11 +150,11 @@ against its detached signature (:file:`phpunit.phar.asc`):
     gpg: Signature made Sat 19 Jul 2014 01:28:02 PM CEST using RSA key ID 6372C20A
     gpg: Can't check signature: public key not found
 
-We don't have the release manager's public key (``6372C20A``)
-in our local system. In order to proceed with the verification we need
-to retrieve the release manager's public key from a key server. One such
-server is :file:`pgp.uni-mainz.de`. The public key servers
-are linked together, so you should be able to connect to any key server.
+Nu avem cheia publica a managerul de release (``6372C20A``)
+in masina locala. Pentru a merge mai departe cu verificarea avem nevoie de
+a obtine cheia publica a managerul de release de la server de chei. Un asemenea
+server este  :file:`pgp.uni-mainz.de`. Serverele de chei sunt sincronizate impreuna
+ asadar puteti sa va conectati si la alt server.
 
 .. code-block:: bash
 
@@ -168,10 +164,10 @@ are linked together, so you should be able to connect to any key server.
     gpg: Total number processed: 1
     gpg:               imported: 1  (RSA: 1)
 
-Now we have received a public key for an entity known as "Sebastian
-Bergmann <sb@sebastian-bergmann.de>". However, we have no way of
-verifying this key was created by the person known as Sebastian
-Bergmann. But, let's try to verify the release signature again.
+Acum avem cheia publica pentru o entitate cunoscuta ca "Sebastian
+Bergmann <sb@sebastian-bergmann.de>". Totusi, nu avem cum sa verificam ca aceasta
+cheie a fost creata de persoana cunoscuta ca Sebastian
+Bergmann. Oricum, sa incercam sa verificam semnatura de release inca o data.
 
 .. code-block:: bash
 
@@ -187,23 +183,19 @@ Bergmann. But, let's try to verify the release signature again.
     gpg:          There is no indication that the signature belongs to the owner.
     Primary key fingerprint: D840 6D0D 8294 7747 2937  7831 4AA3 9408 6372 C20A
 
-At this point, the signature is good, but we don't trust this key. A
-good signature means that the file has not been tampered. However, due
-to the nature of public key cryptography, you need to additionally
-verify that key ``6372C20A`` was created by the real
-Sebastian Bergmann.
+In momentul asta, semnatura este buna, dar nu avem incredere in aceasta cheie.
+O semnatura buna inseamna ca fisierul nu a fost modificat. Totusi, datorita
+naturii cheii publice trebuie sa verificati cheia ``6372C20A`` ca a fost creata
+de adevaratul Sebastian Bergmann.
 
-Any attacker can create a public key and upload it to the public key
-servers. They can then create a malicious release signed by this fake
-key. Then, if you tried to verify the signature of this corrupt release,
-it would succeed because the key was not the "real" key. Therefore, you
-need to validate the authenticity of this key. Validating the
-authenticity of a public key, however, is outside the scope of this
-documentation.
+Orice atacator poate crea o cheie publica si sa o puna pe serverele de chei publice.
+Pot crea un release malicios semnat de aceasta cheie falsa. Daca verificati
+semnatura falsa cu realeaseul corupt o sa aiba succes pentru ca acea cheie nu este cea reala.
+Prin urmare trebuie sa validati authenticitatea acestei chei. Validarea autenticitatii cheii
+publice, totusi este in afara scopului acestui document.
 
-It may be prudent to create a shell script to manage PHPUnit installation
-that verifies the GnuPG signature before running your test suite. For
-example:
+Poate fi o abordare prudenta in crearea un script ce administreaza instalarea PHPUnit si
+verifica semnatura GnuPG inainte de a rula suita de teste. De exemplu:
 
 .. code-block:: bash
 
@@ -267,10 +259,9 @@ example:
 Composer
 ########
 
-Simply add a (development-time) dependency on
-``phpunit/phpunit`` to your project's
-``composer.json`` file if you use `Composer <https://getcomposer.org/>`_ to manage the
-dependencies of your project:
+Simplu adaugati (in timpul dezvoltarii) o dependinta la
+``phpunit/phpunit`` in fisierul
+``composer.json`` din proiectul dumneavoastra daca folositi `Composer <https://getcomposer.org/>`_ pentru a administra dependintetele din proiect:
 
 .. code-block:: bash
 
@@ -278,18 +269,16 @@ dependencies of your project:
 
 .. _installation.optional-packages:
 
-Optional packages
+Pachete optionale
 #################
 
-The following optional packages are available:
+Urmatoarele pachete optionale sunt disponibile:
 
 ``PHP_Invoker``
 
-    A utility class for invoking callables with a timeout. This package is
-    required to enforce test timeouts in strict mode.
+    Clasa utilitara pentru a invoca apelabilele cu o pauza. Acest pachet este necesar pentru a impune pauzele din teste in mod strict.
 
-    This package is included in the PHAR distribution of PHPUnit. It can
-    be installed via Composer using the following command:
+    Acest pachet este inclus in distributia PHAR a lui PHPUnit. Poate fi instalat prin Composer cu urmatoarea comanda:
 
     .. code-block:: bash
 
@@ -297,10 +286,10 @@ The following optional packages are available:
 
 ``DbUnit``
 
-    DbUnit port for PHP/PHPUnit to support database interaction testing.
+    Portare DbUnit pentru PHP/PHPUnit pentru a suporta interactiunea cu baza de date in teste.
 
-    This package is not included in the PHAR distribution of PHPUnit. It can
-    be installed via Composer using the following command:
+    Acest pachet nu este inclus in distributia PHAR a lui PHPUnit.
+    Poate fi instalat prin Composer cu urmatoarea comanda:
 
     .. code-block:: bash
 

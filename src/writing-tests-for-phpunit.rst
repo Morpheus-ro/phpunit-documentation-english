@@ -3,34 +3,34 @@
 .. _writing-tests-for-phpunit:
 
 =========================
-Writing Tests for PHPUnit
+Scrierea testelor in PHPUnit
 =========================
 
-:numref:`writing-tests-for-phpunit.examples.StackTest.php` shows
-how we can write tests using PHPUnit that exercise PHP's array operations.
-The example introduces the basic conventions and steps for writing tests
-with PHPUnit:
+:numref:`writing-tests-for-phpunit.examples.StackTest.php` arata cum putem
+scrie teste folosind PHPUnit pentru a testa operatiile tablourilor in PHP.
+Acest exemplu introduce conventiile de baza si pasii pentru a scrie teste
+cu PHPUnit:
 
 #.
 
-   The tests for a class ``Class`` go into a class ``ClassTest``.
+   Teste pentru o clasa ``Class`` merg intr-o clasa ``ClassTest``.
 
 #.
 
-   ``ClassTest`` inherits (most of the time) from ``PHPUnit\Framework\TestCase``.
+   ``ClassTest`` mosteneste (de cele mai multe pori) ``PHPUnit\Framework\TestCase``.
 
 #.
 
-   The tests are public methods that are named ``test*``.
+   Testele sunt metode publice denumite ``test*``.
 
-   Alternatively, you can use the ``@test`` annotation in a method's docblock to mark it as a test method.
+   Alternativ, puteti folosii comentariu ``@test`` in documentatia metodei pentru a marca metoda ca fiind test.
 
 #.
 
-   Inside the test methods, assertion methods such as ``assertSame()`` (see :ref:`appendixes.assertions`) are used to assert that an actual value matches an expected value.
+   Inauntrul metodelor test, metode de asertiune ca ``assertSame()`` (vedeti :ref:`appendixes.assertions`) sunt folosite in a afirma ca o valoare este ce valoarea asteptata.
 
 .. code-block:: php
-    :caption: Testing array operations with PHPUnit
+    :caption: Testarea operatiilor pe tablouri cu PHPUnit
     :name: writing-tests-for-phpunit.examples.StackTest.php
 
     <?php
@@ -60,7 +60,7 @@ with PHPUnit:
 
 .. _writing-tests-for-phpunit.test-dependencies:
 
-Test Dependencies
+Dependinte de test
 #################
 
     *Adrian Kuhn et. al.*:
@@ -141,7 +141,7 @@ depends upon ``testPush()``.
 
    The return value yielded by a producer is passed "as-is" to its
    consumers by default. This means that when a producer returns an object,
-   a reference to that object is passed to the consumers. Instead of 
+   a reference to that object is passed to the consumers. Instead of
    a reference either (a) a (deep) copy via ``@depends clone``, or (b) a
    (normal shallow) clone (based on PHP keyword ``clone``) via
    ``@depends shallowClone`` are possible too.
@@ -253,7 +253,7 @@ See :numref:`writing-tests-for-phpunit.examples.MultipleDependencies.php`
 
 .. _writing-tests-for-phpunit.data-providers:
 
-Data Providers
+Furnizori de date
 ##############
 
 A test method can accept arbitrary arguments. These arguments are to be
@@ -544,7 +544,7 @@ See :numref:`writing-tests-for-phpunit.data-providers.examples.DependencyAndData
 
 .. _writing-tests-for-phpunit.exceptions:
 
-Testing Exceptions
+Testarea excepțiilor
 ##################
 
 :numref:`writing-tests-for-phpunit.exceptions.examples.ExceptionTest.php`
@@ -639,7 +639,7 @@ shows an example.
 
 .. _writing-tests-for-phpunit.errors:
 
-Testing PHP Errors
+Testarea erorilor PHP
 ##################
 
 By default, PHPUnit converts PHP errors, warnings, and notices that are
@@ -746,7 +746,7 @@ Without the error suppression the test would fail reporting
 
 .. _writing-tests-for-phpunit.output:
 
-Testing Output
+Rezultatele testelor
 ##############
 
 Sometimes you want to assert that the execution of a method, for
@@ -831,7 +831,7 @@ shows the methods provided for testing output
 
 .. _writing-tests-for-phpunit.error-output:
 
-Error output
+Mesaje de eroare
 ############
 
 Whenever a test fails PHPUnit tries its best to provide you with as much
@@ -941,7 +941,7 @@ and provide a few lines of context around every difference.
 
 .. _writing-tests-for-phpunit.error-output.edge-cases:
 
-Edge cases
+Cazuri extreme
 ==========
 
 When a comparison fails PHPUnit creates textual representations of the
